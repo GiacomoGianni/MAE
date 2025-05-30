@@ -1,0 +1,152 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+header {
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  position: relative; 
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #007B7F;
+}
+
+.hero {
+  padding: 80px 20px;
+  background-color: #e1f5f2;
+  text-align: center;
+}
+
+.contatti {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.contatti form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contatti input, 
+.contatti textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contatti button {
+  background-color: #007B7F;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.info-contatto {
+  margin-top: 30px;
+}
+
+/* Posizionamento delle icone social nel header */
+.social-icons {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #333; /* colore grigio scuro */
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #007B7F; /* colore in hover */
+}
+
+.language-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.language-switcher button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+  
+  header {
+    padding: 15px 10px;
+  }
+  
+  .hero {
+    padding: 40px 10px;
+  }
+
+  .contatti {
+    padding: 20px 10px;
+    max-width: 100%;
+  }
+
+  /* Form inputs full width */
+  .contatti input, 
+  .contatti textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+  }
+
+  .contatti button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* Social icons e language switcher si spostano da absolute a static */
+  .social-icons,
+  .language-switcher {
+    position: static;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .social-icons a,
+  .language-switcher button {
+    font-size: 22px;
+  }
+}

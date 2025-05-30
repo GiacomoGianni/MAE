@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contattaci - OSTRICHE MAE</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/i18next@22.4.7/i18next.min.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="language-switcher" style="position:absolute; top:20px; right:20px;">
+    <button onclick="changeLng('it')">IT</button>
+    <button onclick="changeLng('en')">ENG</button>
+  </div>
+  <h1 id="title">OSTRICHE MAE</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="#" id="nav-chi-siamo">Chi Siamo</a></li>
+      <li><a href="mae.html" id="nav-ostrische">Maè</a></li>
+      <li><a href="contatti.html" id="nav-contatti">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="contatti">
+    <h2 id="contact-title">Contattaci</h2>
+    <p id="contact-description">Per qualsiasi richiesta, compila il modulo o scrivici ai contatti qui sotto.</p>
+
+    <form action="#" method="post">
+      <label for="nome" id="label-name">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email" id="label-email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="messaggio" id="label-message">Messaggio:</label>
+      <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
+
+      <button type="submit" id="button-send">Invia</button>
+    </form>
+
+    <div class="info-contatto">
+      <p><strong>Email:</strong> info@tuaazienda.it</p>
+      <p><strong>Telefono:</strong> +39 123 456 7890</p>
+      <p><strong>Indirizzo:</strong> Via ..., Città</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 OSTRICHE MAE</p>
+</footer>
+
+<script>
+  const resources = {
+    it: {
+      translation: {
+        title: "OSTRICHE MAE",
+        "contact-title": "Contattaci",
+        "contact-description": "Per qualsiasi richiesta, compila il modulo o scrivici ai contatti qui sotto.",
+        "button-send": "Invia",
+        "label-name": "Nome:",
+        "label-email": "Email:",
+        "label-message": "Messaggio:",
+        "nav-home": "Home",
+        "nav-chi-siamo": "Chi Siamo",
+        "nav-ostrische": "Maè",
+        "nav-contatti": "Contatti"
+      }
+    },
+    en: {
+      translation: {
+        title: "OSTRICHE MAE",
+        "contact-title": "Contact Us",
+        "contact-description": "For any requests, fill out the form or write to us at the contacts below.",
+        "button-send": "Send",
+        "label-name": "Name:",
+        "label-email": "Email:",
+        "label-message": "Message:",
+        "nav-home": "Home",
+        "nav-chi-siamo": "About Us",
+        "nav-ostrische": "Maè",
+        "nav-contatti": "Contact"
+      }
+    }
+  };
+
+  i18next.init({ lng: 'it', resources }, function () {
+    updateContent();
+  });
+
+  function updateContent() {
+    document.getElementById('title').textContent = i18next.t('title');
+    document.getElementById('contact-title').textContent = i18next.t('contact-title');
+    document.getElementById('contact-description').textContent = i18next.t('contact-description');
+    document.getElementById('button-send').textContent = i18next.t('button-send');
+    document.getElementById('label-name').textContent = i18next.t('label-name');
+    document.getElementById('label-email').textContent = i18next.t('label-email');
+    document.getElementById('label-message').textContent = i18next.t('label-message');
+
+    document.getElementById('nav-home').textContent = i18next.t('nav-home');
+    document.getElementById('nav-chi-siamo').textContent = i18next.t('nav-chi-siamo');
+    document.getElementById('nav-ostrische').textContent = i18next.t('nav-ostrische');
+    document.getElementById('nav-contatti').textContent = i18next.t('nav-contatti');
+  }
+
+  function changeLng(lng) {
+    i18next.changeLanguage(lng, updateContent);
+  }
+</script>
+
+</body>
+</html>

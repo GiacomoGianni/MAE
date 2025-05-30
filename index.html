@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -8,157 +9,94 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://unpkg.com/i18next@22.4.7/i18next.min.js"></script>
 </head>
-
 <body>
 
-  <!-- Widget Instagram di Elfsight (sopra l'header) -->
-  <div class="elfsight-app-c49ab209-f934-4df6-8edf-edff3853f2e2" data-elfsight-app-lazy></div>
+<!-- Instagram widget -->
+<div class="elfsight-app-c49ab209-f934-4df6-8edf-edff3853f2e2" data-elfsight-app-lazy></div>
 
-  <header>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/tuoprofilo" target="_blank" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
-      </a>
-    </div>
-    <div class="language-switcher" style="position:absolute; top:20px; right:20px;">
-      <button onclick="changeLng('it')" aria-label="Italiano">IT</button>
-      <button onclick="changeLng('en')" aria-label="English">ENG</button>
-
-    </div>
-
-    <h1 id="title">OSTRICHE MAE</h1>
-    <nav>
-  <ul id="nav-links">
-    <li><a href="#" id="nav-home">Home</a></li>
-    <li><a href="#" id="nav-chi-siamo">Chi Siamo</a></li>
-    <li><a href="mae.html" id="nav-ostrische">Maè</a></li>
-    <li><a href="#" id="nav-contatti">Contatti</a></li>
-  </ul>
-</nav>
-    <!-- Hamburger button -->
+<header>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/tuoprofilo" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+  </div>
+  <div class="language-switcher" style="position:absolute; top:20px; right:20px;">
+    <button onclick="changeLng('it')">IT</button>
+    <button onclick="changeLng('en')">ENG</button>
+  </div>
+  <h1 id="title">OSTRICHE MAE</h1>
+  <nav>
+    <ul id="nav-links">
+      <li><a href="#" id="nav-home">Home</a></li>
+      <li><a href="#" id="nav-chi-siamo">Chi Siamo</a></li>
+      <li><a href="mae.html" id="nav-ostrische">Maè</a></li>
+      <li><a href="contatti.html" id="nav-contatti">Contatti</a></li>
+    </ul>
+  </nav>
   <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </button>
-  </header>
+</header>
 
-  <main>
-    <section class="hero">
-      <h2 id="hero-title">Ostriche d'eccellenza nella laguna veneta</h2>
-      <p id="hero-description">Scopri il sapore unico delle nostre ostriche allevate nella laguna veneta.</p>
-    </section>
-  </main>
-
-  <section class="contatti">
-    <h2 id="contact-title">Contattaci</h2>
-    <p id="contact-description">Per qualsiasi richiesta, compila il modulo o scrivici ai contatti qui sotto.</p>
-
-    <form action="#" method="post">
-      <label for="nome" id="label-name">Nome:</label>
-      <input type="text" id="nome" name="nome" required />
-
-      <label for="email" id="label-email">Email:</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="messaggio" id="label-message">Messaggio:</label>
-      <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
-
-      <button type="submit" id="button-send">Invia</button>
-    </form>
-
-    <div class="info-contatto">
-      <p><strong>Email:</strong> info@tuaazienda.it</p>
-      <p><strong>Telefono:</strong> +39 123 456 7890</p>
-      <p><strong>Indirizzo:</strong> Via ,..</p>
-    </div>
+<main>
+  <section class="hero">
+    <h2 id="hero-title">Ostriche d'eccellenza nella laguna veneta</h2>
+    <p id="hero-description">Scopri il sapore unico delle nostre ostriche allevate nella laguna veneta.</p>
   </section>
+</main>
+<section class="foto-3" style="text-align:center; margin: 20px 0;">
+  <img src="img/foto_3_mae.jpg" alt="Ostrica Maè" style="max-width:100%; height:auto;" />
+</section>
+<footer>
+  <p>&copy; 2025 OSTRICHE MAE</p>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 OSTRICHE MAE</p>
-  </footer>
-
-  <script>
-    const resources = {
-      it: {
-        translation: {
-          title: "OSTRICHE MAE",
-          "hero-title": "Ostriche d'eccellenza nella laguna veneta",
-          "hero-description": "Scopri il sapore unico delle nostre ostriche allevate nella laguna veneta.",
-          "contact-title": "Contattaci",
-          "contact-description": "Per qualsiasi richiesta, compila il modulo o scrivici ai contatti qui sotto.",
-          "button-send": "Invia",
-          "label-name": "Nome:",
-          "label-email": "Email:",
-          "label-message": "Messaggio:",
-          "nav-home": "Home",
-          "nav-chi-siamo": "Chi Siamo",
-          "nav-ostrische": "Maè",
-          "nav-contatti": "Contatti"
-        }
-      },
-      en: {
-        translation: {
-          title: "OSTRICHE MAE",
-          "hero-title": "Excellent oysters from the Venetian lagoon",
-          "hero-description": "Discover the unique flavour of our oysters bred in the Venetian lagoon.",
-          "contact-title": "Contact Us",
-          "contact-description": "For any requests, fill out the form or write to us at the contacts below.",
-          "button-send": "Send",
-          "label-name": "Name:",
-          "label-email": "Email:",
-          "label-message": "Message:",
-          "nav-home": "Home",
-          "nav-chi-siamo": "About Us",
-          "nav-ostrische": "Maè",
-          "nav-contatti": "Contact"
-        }
+<script>
+  const resources = {
+    it: {
+      translation: {
+        title: "OSTRICHE MAE",
+        "hero-title": "Ostriche d'eccellenza nella laguna veneta",
+        "hero-description": "Scopri il sapore unico delle nostre ostriche allevate nella laguna veneta.",
+        "nav-home": "Home",
+        "nav-chi-siamo": "Chi Siamo",
+        "nav-ostrische": "Maè",
+        "nav-contatti": "Contatti"
       }
-    };
-
-    i18next.init({
-      lng: 'it',
-      resources
-    }, function (err, t) {
-      updateContent();
-    });
-
-    function updateContent() {
-      document.getElementById('title').textContent = i18next.t('title');
-      document.getElementById('hero-title').textContent = i18next.t('hero-title');
-      document.getElementById('hero-description').textContent = i18next.t('hero-description');
-
-      document.getElementById('contact-title').textContent = i18next.t('contact-title');
-      document.getElementById('contact-description').textContent = i18next.t('contact-description');
-      document.getElementById('label-name').textContent = i18next.t('label-name');
-      document.getElementById('label-email').textContent = i18next.t('label-email');
-      document.getElementById('label-message').textContent = i18next.t('label-message');
-      document.getElementById('button-send').textContent = i18next.t('button-send');
-
-      // Aggiorno anche il menu di navigazione
-      document.getElementById('nav-home').textContent = i18next.t('nav-home');
-      document.getElementById('nav-chi-siamo').textContent = i18next.t('nav-chi-siamo');
-      document.getElementById('nav-ostrische').textContent = i18next.t('nav-ostrische');
-      document.getElementById('nav-contatti').textContent = i18next.t('nav-contatti');
+    },
+    en: {
+      translation: {
+        title: "OSTRICHE MAE",
+        "hero-title": "Excellent oysters from the Venetian lagoon",
+        "hero-description": "Discover the unique flavour of our oysters bred in the Venetian lagoon.",
+        "nav-home": "Home",
+        "nav-chi-siamo": "About Us",
+        "nav-ostrische": "Maè",
+        "nav-contatti": "Contact"
+      }
     }
+  };
 
-    function changeLng(lng) {
-      i18next.changeLanguage(lng, () => {
-        updateContent();
-      });
-    }
-  </script>
-  <script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
+  i18next.init({ lng: 'it', resources }, function () { updateContent(); });
 
-  hamburger.addEventListener('click', () => {
+  function updateContent() {
+    document.getElementById('title').textContent = i18next.t('title');
+    document.getElementById('hero-title').textContent = i18next.t('hero-title');
+    document.getElementById('hero-description').textContent = i18next.t('hero-description');
+    document.getElementById('nav-home').textContent = i18next.t('nav-home');
+    document.getElementById('nav-chi-siamo').textContent = i18next.t('nav-chi-siamo');
+    document.getElementById('nav-ostrische').textContent = i18next.t('nav-ostrische');
+    document.getElementById('nav-contatti').textContent = i18next.t('nav-contatti');
+  }
+
+  function changeLng(lng) {
+    i18next.changeLanguage(lng, updateContent);
+  }
+
+  document.getElementById('hamburger').addEventListener('click', () => {
+    const nav = document.getElementById('nav-links');
     const expanded = hamburger.getAttribute('aria-expanded') === 'true';
     hamburger.setAttribute('aria-expanded', !expanded);
-    navLinks.classList.toggle('show');
+    nav.classList.toggle('show');
   });
 </script>
 

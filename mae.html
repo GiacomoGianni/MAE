@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ostrica Maè</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/i18next@22.4.7/i18next.min.js"></script>
 </head>
 <body>
 
 <header>
-  <h1>Ostrica Maè</h1>
+  <div class="language-switcher" style="position:absolute; top:20px; right:20px;">
+    <button onclick="changeLng('it')" aria-label="Italiano">IT</button>
+    <button onclick="changeLng('en')" aria-label="English">ENG</button>
+  </div>
+
+  <h1 id="page-title">Ostrica Maè</h1>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -19,45 +25,72 @@
 
 <main>
   <section class="hero">
-    <h2> Ostrica Maè - The Oyster from Venice </h2>
-<img src="img/foto_1_mae.jpg" alt="Ostrica Maè">
-    <p>
-      L’ostrica Maè è coltivata nella laguna veneta e si distingue per il suo gusto raffinato e la polpa corposa.
-      Perfetta per i palati più esigenti, unisce tradizione e qualità.
-      L’ostrica MAE’ si caratterizza per il guscio spesso e levigato, di forma
-marcatamente concava, che lo distingue al primo impatto dalla maggior parte
-dei prodotti presenti sul mercato;
-La forma della conchiglia dipende dalla tecnica di allevamento che ha richiesto
-alcuni anni di prove per la messa a punto, proprio per la differenza tra
-l’ambiente della Laguna di Venezia e la maggior parte dei siti italiani ed esteri
-dove l’ostrica viene coltivata.
-L’ostrica MAE’ ricade nella categoria che in Francia viene definita ostrica
-“speciale” per distinguerla dall’ ostrica “fine”, in ragione dell’ottimo rapporto
-mollusco-guscio; la parte molle all’interno infatti è abbondante, in quanto la
-concavità della conchiglia consenteampio spazio per il mollusco.
-Il sapore intenso che caratterizza l’ostrica Maè dipende dalla qualità delle
-microalghe di cui si nutre, che è specifica di ogni sito di allevamento, e che
-attribuisce al mollusco una personalità diversa.
-
-L’intensità del sapore di sale non prevale su quello dell’ostrica e la fa apprezzare
-dalla maggior parte dei consumatori; risulta infatti che se il sapore del sale è
-troppo intenso, copre quello dell’ostrica, se troppo tenue, può far perdere
-all’ostrica le caratteristiche di mollusco marino.
-La Laguna di Veneziaècaratterizzata da un elevato ricambio di acqua che arriva
-dal mare ed è poco influenzata dall’acqua dolce dei fiumi, questo attribuisce
-all’ostrica MAE’ l’equilibrato tenore di sale che viene percepito nel gustarla.
-La filiera corta, nel territorio nazionale, garantisce le qualità organolettiche di
-partenza per oltre dieci giorni.
-Il calibro più richiesto dell’ostrica Maè è il numero 5-6 (16-20 ostriche per kg).
-La confezione più richiesta è da 1 kg; disponibile anche da 2 kg
+    <h2 id="mae-title">Ostrica Maè - L'Ostrica della Laguna di Venezia</h2>
+    <img src="img/foto_1_mae.jpg" alt="Ostrica Maè">
+    <p id="mae-description">
+      <!-- Questo testo verrà gestito da i18next -->
     </p>
-<img src="img/foto_2_mae.jpg" alt="Ostrica Maè">
+    <img src="img/foto_2_mae.jpg" alt="Ostrica Maè">
   </section>
 </main>
 
 <footer>
   <p>&copy; 2025 OSTRICHE MAE</p>
 </footer>
+
+<script>
+  const resources = {
+    it: {
+      translation: {
+        "page-title": "Ostrica Maè",
+        "mae-title": "Ostrica Maè - L'Ostrica della Laguna di Venezia",
+        "mae-description": `L’ostrica Maè è coltivata nella laguna veneta e si distingue per il suo gusto raffinato e la polpa corposa.
+Perfetta per i palati più esigenti, unisce tradizione e qualità.
+L’ostrica MAE’ si caratterizza per il guscio spesso e levigato, di forma marcatamente concava, che la distingue dalla maggior parte dei prodotti sul mercato.
+La sua forma deriva da una tecnica di allevamento sviluppata appositamente per l’ambiente unico della Laguna di Venezia.
+Questa ostrica è classificata come “speciale” in Francia, grazie all’elevato rapporto mollusco-guscio: la conchiglia concava offre ampio spazio alla polpa.
+Il sapore intenso deriva dalle microalghe locali, che conferiscono personalità distintiva.
+L’equilibrato tenore di sale, dato dal continuo ricambio d’acqua marina e dalla scarsa influenza di acque dolci, la rende apprezzata da molti.
+Grazie alla filiera corta, mantiene qualità organolettiche per oltre 10 giorni.
+Il calibro più richiesto è il 5-6 (16–20 ostriche/kg), con confezioni da 1 o 2 kg.`
+      }
+    },
+    en: {
+      translation: {
+        "page-title": "Mae Oyster",
+        "mae-title": "Mae Oyster - The Oyster from the Venetian Lagoon",
+        "mae-description": `The Mae oyster is farmed in the Venetian lagoon and stands out for its refined flavor and firm flesh.
+Perfect for demanding palates, it combines tradition and quality.
+The MAE oyster features a thick, smooth shell with a distinctly concave shape, setting it apart from most market products.
+Its shape results from a custom cultivation technique tailored to the unique environment of the Venetian Lagoon.
+In France, it's classified as a “special” oyster due to its excellent flesh-to-shell ratio—the concavity allows ample room for the meat.
+Its intense flavor comes from the specific local microalgae it feeds on, giving it a unique character.
+The balanced saltiness, thanks to the lagoon’s high seawater turnover and minimal freshwater influence, is widely appreciated.
+A short national supply chain ensures freshness and quality for over 10 days.
+The most requested size is 5–6 (16–20 oysters/kg), sold in 1 or 2 kg packages.`
+      }
+    }
+  };
+
+  i18next.init({
+    lng: 'it',
+    resources
+  }, function (err, t) {
+    updateContent();
+  });
+
+  function updateContent() {
+    document.getElementById('page-title').textContent = i18next.t('page-title');
+    document.getElementById('mae-title').textContent = i18next.t('mae-title');
+    document.getElementById('mae-description').textContent = i18next.t('mae-description');
+  }
+
+  function changeLng(lng) {
+    i18next.changeLanguage(lng, () => {
+      updateContent();
+    });
+  }
+</script>
 
 </body>
 </html>

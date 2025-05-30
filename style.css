@@ -102,13 +102,31 @@ nav a {
   cursor: pointer;
 }
 
-
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   nav ul {
+    display: none; /* Nascondi menu */
+    position: absolute;
+    top: 60px; /* sotto header */
+    right: 20px;
+    background-color: white;
     flex-direction: column;
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 10px 0;
+    z-index: 1000;
     gap: 10px;
-    padding: 0;
+  }
+  
+  nav ul.show {
+    display: flex; /* mostra il menu quando attivo */
+  }
+  
+  nav ul li {
+    margin: 10px 0;
+    text-align: right;
+    padding: 0 20px;
   }
   
   header {
@@ -149,34 +167,8 @@ nav a {
   .language-switcher button {
     font-size: 22px;
   }
-}
-/* Nascondi il menu di navigazione su mobile (tranne quando è attivo) */
-@media (max-width: 768px) {
-  nav ul {
-    display: none; /* Nascondi menu */
-    position: absolute;
-    top: 60px; /* sotto header */
-    right: 20px;
-    background-color: white;
-    flex-direction: column;
-    width: 200px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    padding: 10px 0;
-    z-index: 1000;
-  }
-  
-  nav ul.show {
-    display: flex; /* mostra il menu quando attivo */
-  }
-  
-  nav ul li {
-    margin: 10px 0;
-    text-align: right;
-    padding: 0 20px;
-  }
-  
-  /* Hamburger button - inizialmente nascosto su desktop */
+
+  /* Hamburger button visibile su mobile */
   #hamburger {
     display: flex;
     flex-direction: column;
@@ -204,6 +196,8 @@ nav a {
 }
 
 /* Nascondi hamburger su desktop */
-#hamburger {
-  display: none;
+@media (min-width: 769px) {
+  #hamburger {
+    display: none;
+  }
 }

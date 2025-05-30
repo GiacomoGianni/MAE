@@ -31,19 +31,25 @@
 
     <h1 id="title">OSTRICHE MAE</h1>
     <nav>
-      <ul>
-        <li><a href="#" id="nav-home">Home</a></li>
-        <li><a href="#" id="nav-chi-siamo">Chi Siamo</a></li>
-        <li><a href="#" id="nav-ostrische">Le Nostre Ostriche</a></li>
-        <li><a href="#" id="nav-contatti">Contatti</a></li>
-      </ul>
-    </nav>
+  <ul id="nav-links">
+    <li><a href="#" id="nav-home">Home</a></li>
+    <li><a href="#" id="nav-chi-siamo">Chi Siamo</a></li>
+    <li><a href="#" id="nav-ostrische">Mae</a></li>
+    <li><a href="#" id="nav-contatti">Contatti</a></li>
+  </ul>
+</nav>
+    <!-- Hamburger button -->
+  <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   </header>
 
   <main>
     <section class="hero">
       <h2 id="hero-title">Ostriche d'eccellenza nella laguna veneta</h2>
-      <p id="hero-description">Scopri il sapore unico delle nostre ostriche allevate in armonia con la natura.</p>
+      <p id="hero-description">Scopri il sapore unico delle nostre ostriche allevate nella laguna veneta.</p>
     </section>
   </main>
 
@@ -67,7 +73,7 @@
     <div class="info-contatto">
       <p><strong>Email:</strong> info@tuaazienda.it</p>
       <p><strong>Telefono:</strong> +39 123 456 7890</p>
-      <p><strong>Indirizzo:</strong> Viale ...</p>
+      <p><strong>Indirizzo:</strong> Via ,..</p>
     </div>
   </section>
 
@@ -81,7 +87,7 @@
         translation: {
           title: "OSTRICHE MAE",
           "hero-title": "Ostriche d'eccellenza nella laguna veneta",
-          "hero-description": "Scopri il sapore unico delle nostre ostriche allevate nella laguna veneta.",
+          "hero-description": "Scopri il sapore unico delle nostre ostriche allevate in armonia con la natura.",
           "contact-title": "Contattaci",
           "contact-description": "Per qualsiasi richiesta, compila il modulo o scrivici ai contatti qui sotto.",
           "button-send": "Invia",
@@ -98,7 +104,7 @@
         translation: {
           title: "OSTRICHE MAE",
           "hero-title": "Excellent oysters from the Venetian lagoon",
-          "hero-description": "Discover the unique taste of our oysters grown in harmony with nature.",
+          "hero-description": "Discover the unique flavour of our oysters bred in the Venetian lagoon.",
           "contact-title": "Contact Us",
           "contact-description": "For any requests, fill out the form or write to us at the contacts below.",
           "button-send": "Send",
@@ -107,7 +113,7 @@
           "label-message": "Message:",
           "nav-home": "Home",
           "nav-chi-siamo": "About Us",
-          "nav-ostrische": "Our Oysters",
+          "nav-ostrische": "Mae",
           "nav-contatti": "Contact"
         }
       }
@@ -145,5 +151,16 @@
       });
     }
   </script>
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('show');
+  });
+</script>
+
 </body>
 </html>

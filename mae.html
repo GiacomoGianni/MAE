@@ -10,17 +10,22 @@
 <body>
 
 <header>
-  <div class="language-switcher" style="position:absolute; top:20px; right:20px;">
+  <div class="language-switcher" style="position:absolute; top:20px; right:70px;">
     <button onclick="changeLng('it')" aria-label="Italiano">IT</button>
     <button onclick="changeLng('en')" aria-label="English">ENG</button>
   </div>
 
   <h1 id="page-title">Ostrica Maè</h1>
+
   <nav>
-    <ul>
+    <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
     </ul>
   </nav>
+
+  <button id="hamburger" aria-label="Toggle menu" aria-expanded="false" style="position:absolute; top:20px; right:20px;">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 
 <main>
@@ -90,6 +95,15 @@ The most requested size is 5–6 (16–20 oysters/kg), sold in 1 or 2 kg package
       updateContent();
     });
   }
+
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('show');
+  });
 </script>
 
 </body>

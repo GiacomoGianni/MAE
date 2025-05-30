@@ -19,9 +19,14 @@
     <a href="https://www.instagram.com/tuoprofilo" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
     <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
   </div>
-  <div class="language-switcher" style="position:absolute; top:20px; right:20px;">
-    <button onclick="changeLng('it')">IT</button>
-    <button onclick="changeLng('en')">ENG</button>
+  <div class="header-top" style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; position: relative; padding: 20px;">
+    <div class="language-switcher">
+      <button onclick="changeLng('it')">IT</button>
+      <button onclick="changeLng('en')">ENG</button>
+    </div>
+    <button id="hamburger" aria-label="Toggle menu" aria-expanded="false" style="font-size: 1.5rem;">
+      <span></span><span></span><span></span>
+    </button>
   </div>
   <h1 id="title">OSTRICHE MAE</h1>
   <nav>

@@ -95,14 +95,16 @@ nav a {
   gap: 10px;
 }
 
+/* Ridurre la dimensione del testo dei bottoni di cambio lingua */
 .language-switcher button {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 16px; /* Ridotto la dimensione del testo per i pulsanti */
   cursor: pointer;
+  padding: 5px 10px; /* Aggiunto un po' di padding per migliorare l'aspetto */
 }
 
-/* --- RESPONSIVE --- */
+/* Modifica per dispositivi mobili */
 @media (max-width: 768px) {
   nav ul {
     display: none; /* Nascondi menu */
@@ -117,12 +119,12 @@ nav a {
     padding: 10px 0;
     z-index: 1000;
     gap: 10px;
-    z-index: 1000;
   }
   
   nav ul.show {
     display: flex; /* mostra il menu quando attivo */
     background-color: rgba(0, 123, 127, 0.1);
+    z-index: 2001; /* Assicurati che il menu sia sopra */
   }
   
   nav ul li {
@@ -171,26 +173,33 @@ nav a {
   }
 
   /* Hamburger button visibile su mobile */
- #hamburger {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 5px;
-  z-index: 2000;
-  position: relative; /* Questo potrebbe aiutare a posizionarlo correttamente */
-  visibility: visible; /* Forza la visibilità */
-}
+  #hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    z-index: 2000;
+    position: absolute; /* Cambiato da relative a absolute */
+    top: 20px; /* Posizione verticale (distanza dal top) */
+    right: 20px; /* Posizione orizzontale (distanza dalla destra) */
+  }
 
-#hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #000;
-  border-radius: 2px;
-}
+  #hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    border-radius: 2px;
+  }
+
+  /* Modifica delle dimensioni per il cambio lingua su mobile */
+  .language-switcher button {
+    font-size: 14px; /* Ancora più piccolo su dispositivi mobili */
+    padding: 5px; /* Ridotto il padding per adattarsi meglio */
+  }
 }
 
 /* Nascondi hamburger su desktop */
@@ -199,6 +208,7 @@ nav a {
     display: none;
   }
 }
+
 .hero img {
   max-width: 100%;
   height: auto;

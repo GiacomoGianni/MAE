@@ -122,6 +122,7 @@ nav a {
   
   nav ul.show {
     display: flex; /* mostra il menu quando attivo */
+    background-color: rgba(0, 123, 127, 0.1);
   }
   
   nav ul li {

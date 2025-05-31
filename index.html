@@ -7,65 +7,6 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://unpkg.com/i18next@22.4.7/i18next.min.js"></script>
-  <style>
-    /* CSS base per hamburger e nav responsive */
-
-    #nav-links {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    /* Nascondi nav su schermi piccoli */
-    @media (max-width: 768px) {
-      #nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #fff;
-        position: absolute;
-        top: 70px; /* sotto header */
-        right: 20px;
-        border: 1px solid #ccc;
-        padding: 10px;
-        width: 150px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        z-index: 1000;
-      }
-
-      #nav-links.show {
-        display: flex;
-      }
-
-      /* Hamburger styling */
-      #hamburger {
-        display: block;
-        cursor: pointer;
-        border: none;
-        background: none;
-        position: relative;
-        width: 30px;
-        height: 25px;
-      }
-      #hamburger span {
-        display: block;
-        height: 3px;
-        width: 100%;
-        background: #333;
-        margin-bottom: 5px;
-        border-radius: 2px;
-        transition: 0.3s;
-      }
-    }
-
-    /* Nascondi hamburger su desktop */
-    @media (min-width: 769px) {
-      #hamburger {
-        display: none;
-      }
-    }
-  </style>
 </head>
 <body>
 

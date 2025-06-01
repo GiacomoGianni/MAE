@@ -105,7 +105,6 @@
   function changeLng(lng) {
     i18next.changeLanguage(lng, updateContent);
   }
-
   // Menu hamburger toggle
   const hamburger = document.getElementById('hamburger');
   hamburger.addEventListener('click', () => {
@@ -113,6 +112,23 @@
     const expanded = hamburger.getAttribute('aria-expanded') === 'true';
     hamburger.setAttribute('aria-expanded', !expanded);
     nav.classList.toggle('show');
+  });
+  // Sticky intelligente: mostra/nasconde il banner su scroll
+  let lastScrollTop = 0;
+  const banner = document.querySelector('.top-banner');
+
+  window.addEventListener('scroll', function () {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScrollTop) {
+      // Scroll verso il basso → nascondi
+      banner.style.top = "-120px"; // o -100px, a seconda dell’altezza reale
+    } else {
+      // Scroll verso l’alto → mostra
+      banner.style.top = "0";
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   });
 </script>
 

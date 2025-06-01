@@ -9,12 +9,9 @@
   <script src="https://unpkg.com/i18next@22.4.7/i18next.min.js"></script>
 </head>
 <body>
-
-<header>
-  <div class="top-banner">
-     Benvenuto nel sito ufficiale di Ostrica Maè!
-  </div>
- <div class="header-top">
+<header class="top-banner">
+  <div class="header-container">
+    <!-- Sinistra: social -->
     <div class="social-icons">
       <a href="https://www.instagram.com/tuoprofilo" target="_blank" aria-label="Instagram">
         <i class="fa-brands fa-instagram"></i>
@@ -24,12 +21,16 @@
       </a>
     </div>
 
+    <!-- Centro: titolo -->
+    <h1 id="title">OSTRICHE MAE</h1>
+
+    <!-- Destra: lingua -->
     <div class="language-switcher">
       <button onclick="changeLng('it')" aria-label="Italiano">IT</button>
       <button onclick="changeLng('en')" aria-label="English">ENG</button>
     </div>
 
-    <!-- Hamburger unico -->
+    <!-- Hamburger -->
     <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
       <span></span>
@@ -37,8 +38,7 @@
     </button>
   </div>
 
-  <h1 id="title">OSTRICHE MAE</h1>
-
+  <!-- Menu di navigazione -->
   <nav>
     <ul id="nav-links">
       <li><a href="#" id="nav-home">Home</a></li>
@@ -48,7 +48,7 @@
     </ul>
   </nav>
 </header>
-
+  
 <main>
   <section class="hero">
     <h2 id="hero-title">Ostriche d'eccellenza nella laguna veneta</h2>

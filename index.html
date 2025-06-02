@@ -21,16 +21,16 @@
       </a>
     </div>
 
-    // Centro: titolo
+    <!-- Centro: titolo -->
     <h1 id="title">OSTRICHE MAE</h1>
 
-    // Destra: lingua 
+    <!-- Destra: lingua 
     <div class="language-switcher">
       <button onclick="changeLng('it')" aria-label="Italiano">🇮🇹</button>
       <button onclick="changeLng('en')" aria-label="English">🇬🇧</button>
     </div>
 
-    // Hamburger 
+    <!-- Hamburger -->
     <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
       <span></span>
@@ -38,7 +38,7 @@
     </button>
   </div>
 
-  // Menu di navigazione
+  <!-- Menu di navigazione -->
   <nav>
     <ul id="nav-links">
       <li><a href="#" id="nav-home">Home</a></li>
@@ -63,7 +63,7 @@
 <footer>
   <p>&copy; 2025 OSTRICHE MAE</p>
 </footer>
- // Banner in fondo 
+ <!-- Banner in fondo -->
 <section class="bottom-banner">
   <p id="footer-message">Seguici per rimanere aggiornato sulle novità delle nostre ostriche!</p>
 </section>
@@ -111,7 +111,7 @@
   function changeLng(lng) {
     i18next.changeLanguage(lng, updateContent);
   }
-  // Menu hamburger toggle
+  <!-- Menu hamburger toggle -->
   const hamburger = document.getElementById('hamburger');
   hamburger.addEventListener('click', () => {
     const nav = document.getElementById('nav-links');

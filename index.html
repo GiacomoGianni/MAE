@@ -65,7 +65,7 @@
 </footer>
  // Banner in fondo 
 <section class="bottom-banner">
-  <p>Seguici per rimanere aggiornato sulle novità delle nostre ostriche!</p>
+  <p id="footer-message">Seguici per rimanere aggiornato sulle novità delle nostre ostriche!</p>
 </section>
 <script>
   const resources = {
@@ -78,6 +78,7 @@
         "nav-chi-siamo": "Chi Siamo",
         "nav-ostrische": "Maè",
         "nav-contatti": "Contatti"
+        "footer-message": "Seguici per rimanere aggiornato sulle novità delle nostre ostriche!"
       }
     },
     en: {
@@ -89,6 +90,7 @@
         "nav-chi-siamo": "About Us",
         "nav-ostrische": "Maè",
         "nav-contatti": "Contact"
+        "footer-message": "Follow us to stay updated on our oyster news!"
       }
     }
   };
@@ -103,6 +105,7 @@
     document.getElementById('nav-chi-siamo').textContent = i18next.t('nav-chi-siamo');
     document.getElementById('nav-ostrische').textContent = i18next.t('nav-ostrische');
     document.getElementById('nav-contatti').textContent = i18next.t('nav-contatti');
+    document.getElementById('footer-message').textContent = i18next.t('footer-message');
   }
 
   function changeLng(lng) {

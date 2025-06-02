@@ -26,6 +26,31 @@
   border-top: 1px solid #ccc;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: row;  /* questa è la disposizione in riga, di default è row ma la mettiamo per chiarezza */
+  gap: 20px;
+  margin-top: 10px;
+  justify-content: center; /* centra le icone orizzontalmente */
+  align-items: center;     /* allinea verticalmente in mezzo (utile se altezza cambia) */
+}
+
+.footer-social a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #007B7F;
+}
 
 /* contenitore interno per layout flessibile */
 .header-container {
